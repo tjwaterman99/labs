@@ -1,5 +1,6 @@
 include "root" {
   path = find_in_parent_folders()
+  expose = true
 }
 
 terraform {
@@ -7,14 +8,13 @@ terraform {
 }
 
 locals {
-  do_token   = get_env("DO_TOKEN")
   env_config = jsondecode(file(find_in_parent_folders("env.json")))
   env        = local.env_config["NAME"]
   region     = local.env_config["REGION"]
 }
 
 inputs = {
-  do_token = local.do_token
+  do_token = include.root.locals.do_token
   name     = "vpc-${local.region}-${local.env}"
   region   = "${local.region}"
 }

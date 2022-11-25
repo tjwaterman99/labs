@@ -5,6 +5,10 @@ remote_state {
     }
 }
 
+locals {
+    do_token   = get_env("DO_TOKEN")
+}
+
 generate "backend" {
     path = "backend.tf"
     if_exists = "overwrite"
