@@ -11,9 +11,13 @@ locals {
     env = jsondecode(file(find_in_parent_folders("env.json")))
 }
 
+dependency "vpc" {
+    config_path = "../vpc"
+}
+
 inputs = {
     do_token = include.root.locals.do_token
     region = local.env["REGION"]
     env = local.env["NAME"]
-    vpc_uuid = "394686a4-597c-443d-8fb5-4c56f6529729"
+    vpc_uuid = dependency.vpc.outputs.vpc_id
 }

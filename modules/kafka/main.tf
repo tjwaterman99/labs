@@ -17,4 +17,5 @@ resource "digitalocean_droplet" "kafka" {
   name   = "${local.node_id}-${count.index}"
   region = var.region
   size   = var.size
+  vpc_uuid = var.vpc_uuid
 }
