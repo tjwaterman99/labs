@@ -1,0 +1,8 @@
+- name: first-playbook
+  hosts: kafka
+  tasks:
+   - name: Ping my hosts
+     ansible.builtin.ping:
+   - name: Print message
+     ansible.builtin.debug:
+       msg: Hello world

@@ -1,0 +1,13 @@
+# Somehow we need to pull these hosts dynamically because their IP addresses
+# can change. Perhaps we could have terragrunt read this inventory.yml file
+# to generate the hosts, and always use reserved ip's in this file
+kafka:
+  hosts:
+    vm01:
+      ansible_host: 134.209.206.220
+    vm02:
+      ansible_host: 104.248.91.219
+    vm03:
+      ansible_host: 134.209.206.113
+  vars:
+    ansible_user: root
