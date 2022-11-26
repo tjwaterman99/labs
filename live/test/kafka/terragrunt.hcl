@@ -20,4 +20,5 @@ inputs = {
     region = local.env["REGION"]
     env = local.env["NAME"]
     vpc_uuid = dependency.vpc.outputs.vpc_id
+    ssh_keys = include.root.locals.ssh_keys
 }

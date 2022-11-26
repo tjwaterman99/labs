@@ -18,4 +18,5 @@ resource "digitalocean_droplet" "kafka" {
   region = var.region
   size   = var.size
   vpc_uuid = var.vpc_uuid
+  ssh_keys = var.ssh_keys
 }
