@@ -4,7 +4,7 @@ include "root" {
 }
 
 terraform {
-    source = "${get_repo_root()}/modules//kafka"
+    source = "${get_repo_root()}/modules//gateway"
 }
 
 locals {
@@ -17,10 +17,6 @@ dependency "vpc" {
 
 dependency "project" {
     config_path = "../project"
-}
-
-dependency "gateway" {
-    config_path = "../gateway"
 }
 
 inputs = {
