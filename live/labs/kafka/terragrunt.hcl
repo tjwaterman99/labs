@@ -15,10 +15,15 @@ dependency "vpc" {
     config_path = "../vpc"
 }
 
+dependency "project" {
+    config_path = "../project"
+}
+
 inputs = {
     do_token = include.root.locals.do_token
     region = local.env["REGION"]
     env = local.env["NAME"]
     vpc_uuid = dependency.vpc.outputs.vpc_id
+    project_id = dependency.project.outputs.id
     ssh_keys = include.root.locals.ssh_keys
 }

@@ -10,6 +10,10 @@ variable region {
     type = string
 }
 
+variable project_id {
+    type = string
+}
+
 variable vpc_uuid {
     type = string
 }
